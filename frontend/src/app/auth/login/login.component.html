@@ -5,17 +5,17 @@
         </div>
         <div class ="col-md-4">
             <h3 class = "text-primary text-center">Welcome to Multiuser Login with Angular & Spring Boot.</h3>
-            <form action=" " class="mt-4">
+
+            <form action=" " class="mt-5 p-5">
                 <h5 class="text-primary mb-3">Login</h5>
                 <form>
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      <label for="floatingInput">Email address</label>
+                      <input type="text" class="form-control" id="floatingInput" placeholder="user@email.com" email = "user@email.com" [(ngModel)]="email">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <label for="inputPassword" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPassword">
                     </div>
 
                     <div class="form-floating mb-3">
