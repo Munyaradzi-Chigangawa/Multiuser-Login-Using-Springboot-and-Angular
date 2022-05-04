@@ -10,17 +10,17 @@
                 <h5 class="text-primary mb-3">Login</h5>
                 <form>
                     <div class="mb-3">
-                      <label for="floatingInput">Email address</label>
+                      <label for="inputEmail">Email address</label>
                       <input type="text" class="form-control" id="floatingInput" placeholder="user@email.com" email = "user@email.com" [(ngModel)]="email">
                     </div>
                     <div class="mb-3">
                       <label for="inputPassword" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="inputPassword">
+                      <input type="password" class="form-control" id="inputPassword" password="password" [(ngModel)]="password">
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                          <option selected>Access Rights</option>
+                        <select class="form-select" id="floatingSelect" aria-label="Role" role="role" [(ngModel)]="role">
+                          <option selected></option>
                           <option value="1">Admin</option>
                           <option value="2">User</option>
                         </select>
