@@ -11,9 +11,23 @@ export class LoginComponent implements OnInit {
   password : string = "";
   role : string = "";
 
-  constructor() { }
+  roles : string[];
 
-  ngOnInit(): void {
+  constructor() { 
+    this.roles = [
+      'admin', 
+      'user'
+    ];
   }
 
+  ngOnInit(): void {
+
+  }
+    login() {
+      console.log(
+        this.email + " " + 
+        this.password + " " + 
+        this.role
+        );
+    }
 }
