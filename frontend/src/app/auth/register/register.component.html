@@ -1,1 +1,39 @@
-<p>register works!</p>
+<div class="countainer-fluid" style="height: 80vh;">
+    <div class="row" style="height: 100vh;" >
+      <div class="col-md-6 text-center">
+        <img src="../../../../assets/login.svg" style="height: 70vh;">
+      </div>
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <div class="card">
+          <div class="card-body">
+  
+            <h3 class="text-primary text-center">Welcome to Multiuser Login with Angular & Spring Boot.</h3>
+  
+            <h5 class="text-primary mb-3">Register</h5>
+            <form>
+              <div class="mb-3">
+                <label for="inputEmail">Email address</label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="user@email.com"
+                  email="user@email.com" [(ngModel)]="email">
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword" password="password" [(ngModel)]="password">
+              </div>
+  
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelect" aria-label="Role" role="role" [(ngModel)]="role">
+                  <option *ngFor = "let r of roles" [value]="r">{{r}}</option>
+                </select>
+                <label for="floatingSelect">Role</label>
+              </div>
+  
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-outline-primary me-md-2" type="button" (click)="register()">Register</button>
+              </div>
+  
+              <a routerLink="/register" href="#" class="text-primary" style="text-decoration: none;"> Already have an Account ?</a>
+            </form>
+  
+          </div>
+          </div>
