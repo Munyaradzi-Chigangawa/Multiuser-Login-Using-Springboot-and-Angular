@@ -9,15 +9,12 @@ export class RegisterComponent implements OnInit {
 
   email : string = "";
   password : string = "";
-  role : string = "";
+  name : string = "";
 
-  roles : string[];
+
 
   constructor() { 
-    this.roles = [
-      'admin', 
-      'user'
-    ];
+  
   }
 
   ngOnInit(): void {
@@ -25,9 +22,9 @@ export class RegisterComponent implements OnInit {
 
   register() {
     console.log(
+      this.name + " " +
       this.email + " " + 
-      this.password + " " + 
-      this.role
+      this.password + " "
       );
   }
 
