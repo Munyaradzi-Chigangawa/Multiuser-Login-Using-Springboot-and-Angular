@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { userInfo } from 'os';
+import { User } from 'src/app/model/user';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +14,11 @@ export class LoginComponent implements OnInit {
   password : string = "";
   role : string = "";
 
+  user : User = new User();
+
   roles : string[];
 
-  constructor() { 
+  constructor( private authService : AuthService) { 
     this.roles = [
       'admin', 
       'user'
@@ -24,10 +29,9 @@ export class LoginComponent implements OnInit {
 
   }
     login() {
-      console.log(
-        this.email + " " + 
-        this.password + " " + 
-        this.role
-        );
+      
+      this.user.email = this.email;
+      this.user.password = this.password;
+      this.user.role = this.role;
     }
 }
