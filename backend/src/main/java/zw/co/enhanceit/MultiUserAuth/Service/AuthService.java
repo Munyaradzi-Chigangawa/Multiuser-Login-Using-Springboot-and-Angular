@@ -17,16 +17,14 @@ public class AuthService {
         this.userRepository = userRepository;
     }
 
-    public String register (User user) {
+    public User register (User user) {
         // Check if user already exists or not
         if (checkUserExist(user))
-            return "Error while adding user.";
+            return null;
 
             user.setToken(generateToken());
 
-            userRepository.save(user);
-
-            return "Successfully registered user.";
+           return userRepository.save(user);
     }
 
     private String generateToken() {
@@ -37,17 +35,23 @@ public class AuthService {
     }
 
     private boolean checkUserExist(User user) {
-        User existingUser = userRepository.findById(user.getUsername()).orElse(null);
+        User existingUser = userRepository.findById(user.getEmail()).orElse(null);
 
         return existingUser != null;
     }
 
-    public String login(User user) {
-        User existingUser = userRepository.findById(user.getUsername()).orElse(null);
+    public User login(User user) {
+        User existingUser = userRepository.findById(user.getEmail()).orElse(null);
 
-        if(existingUser == null)
-            return "";
+        if (
+                existingUser.getEmail().equals(user.getEmail()) &&
+                        existingUser.getPassword().equals(user.getPassword()) &&
+                        existingUser.getRole().equals(user.getRole())
+        ) {
+            existingUser.setPassword("");
+            return existingUser;
 
-        return existingUser.getToken();
+    }
+        return null;
     }
 }

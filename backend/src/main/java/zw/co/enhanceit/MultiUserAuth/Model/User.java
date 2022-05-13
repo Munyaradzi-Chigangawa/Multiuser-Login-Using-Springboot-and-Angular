@@ -14,7 +14,7 @@ import javax.persistence.Id;
 public class User {
     @Id
     @Column(length = 100)
-    private String username;
+    private String email;
     private String name;
     private String password;
     private String role;
