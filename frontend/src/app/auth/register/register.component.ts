@@ -27,6 +27,13 @@ export class RegisterComponent implements OnInit {
     this.user.password = this.password;
     this.user.name = this.name;
     this.user.role = "user";
+
+    this.authService.register(this.user).subscribe(res => {
+
+    }, err => {
+      alert("Registration Failed.");
+    }
+    )
   }
 
 
