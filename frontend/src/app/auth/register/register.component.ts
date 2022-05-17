@@ -29,9 +29,18 @@ export class RegisterComponent implements OnInit {
     this.user.role = "user";
 
     this.authService.register(this.user).subscribe(res => {
+      if (res == null) {
+        alert("Registration failed");
+        this.ngOnInit();
+      } else {
+        console.log("Registration success")
+        alert("Registration success");
+        this.ngOnInit();
+      }
 
     }, err => {
       alert("Registration Failed.");
+      this.ngOnInit();
     }
     )
   }
